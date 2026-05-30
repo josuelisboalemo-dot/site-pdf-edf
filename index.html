@@ -1,301 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Download do Material Completo</title>
-
-<meta name="description" content="Baixe gratuitamente o material completo em PDF.">
-<meta name="theme-color" content="#0f172a">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Download PDF</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#020617,#0f172a,#1e1b4b);
-color:white;
-overflow-x:hidden;
-}
-
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-background:
-radial-gradient(circle at 20% 20%,#3b82f650 0%,transparent 25%),
-radial-gradient(circle at 80% 30%,#8b5cf650 0%,transparent 25%),
-radial-gradient(circle at 50% 80%,#06b6d450 0%,transparent 25%);
-animation:bgMove 10s infinite alternate;
-}
-
-@keyframes bgMove{
-from{transform:scale(1);}
-to{transform:scale(1.1);}
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-.hero{
-min-height:100vh;
+height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
-text-align:center;
+align-items:center;
+background:linear-gradient(-45deg,#0f172a,#1e3a8a,#7c3aed,#0f172a);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow:hidden;
 }
 
-.glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.1);
-border-radius:25px;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:90%;
+max-width:450px;
 padding:40px;
-box-shadow:0 0 40px rgba(59,130,246,.3);
+text-align:center;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+box-shadow:0 0 40px rgba(255,255,255,.2);
+animation:entrada 1s ease;
 }
 
-.hero h1{
-font-size:clamp(2.5rem,6vw,5rem);
-font-weight:800;
+@keyframes entrada{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+color:white;
+font-size:2rem;
 margin-bottom:15px;
 }
 
-.hero p{
-font-size:1.2rem;
-opacity:.9;
+p{
+color:#ddd;
 margin-bottom:30px;
-}
-
-.pdf{
-width:220px;
-height:300px;
-margin:auto;
-background:linear-gradient(145deg,#2563eb,#8b5cf6);
-border-radius:15px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:70px;
-font-weight:bold;
-box-shadow:0 0 40px #3b82f6;
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
 }
 
 .btn{
 display:inline-block;
-padding:16px 35px;
-margin-top:25px;
-border-radius:12px;
+padding:15px 35px;
 text-decoration:none;
-font-weight:700;
+font-weight:bold;
 color:white;
-background:linear-gradient(90deg,#2563eb,#8b5cf6);
+border-radius:50px;
+background:linear-gradient(90deg,#3b82f6,#8b5cf6);
 transition:.3s;
-box-shadow:0 0 25px rgba(59,130,246,.5);
+box-shadow:0 0 25px #3b82f6;
 }
 
 .btn:hover{
-transform:translateY(-4px) scale(1.05);
-}
-
-.section{
-padding:80px 0;
-}
-
-.title{
-text-align:center;
-font-size:2.5rem;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-padding:25px;
-border-radius:20px;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-transition:.3s;
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(139,92,246,.4);
-}
-
-.card h3{
-margin:15px 0;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-text-align:center;
-}
-
-.number{
-font-size:3rem;
-font-weight:800;
-color:#60a5fa;
-}
-
-footer{
-padding:30px;
-text-align:center;
-opacity:.7;
-}
-
-@media(max-width:600px){
-
-.glass{
-padding:25px;
-}
-
-.hero h1{
-font-size:2.2rem;
-}
-
-.pdf{
-width:180px;
-height:240px;
-}
+transform:scale(1.08);
+box-shadow:0 0 40px #8b5cf6;
 }
 </style>
 </head>
-
 <body>
 
-<div class="bg"></div>
+<div class="card">
+<h1>📄 Download do PDF</h1>
+<p>Clique no botão abaixo para baixar o arquivo.</p>
 
-<section class="hero">
-<div class="container">
-
-<div class="glass">
-
-<div class="pdf">PDF</div>
-
-<h1>Baixe Agora o Material Completo</h1>
-
-<p>
-Conteúdo atualizado, completo e disponível para download instantâneo.
-</p>
-
-<a class="btn" href="arquivo.pdf" download>
-📥 Baixar PDF
+<a href="arquivo.pdf" download class="btn">
+BAIXAR PDF
 </a>
-
 </div>
-
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-
-<h2 class="title">Por que baixar?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>📚 Completo</h3>
-<p>Todo o conteúdo organizado em um único material.</p>
-</div>
-
-<div class="card">
-<h3>⚡ Rápido</h3>
-<p>Download instantâneo sem complicações.</p>
-</div>
-
-<div class="card">
-<h3>🎯 Atualizado</h3>
-<p>Informações revisadas e modernas.</p>
-</div>
-
-<div class="card">
-<h3>📱 Responsivo</h3>
-<p>Funciona perfeitamente no celular e computador.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-
-<h2 class="title">Estatísticas</h2>
-
-<div class="stats">
-
-<div>
-<div class="number" data-target="5000">0</div>
-<p>Downloads</p>
-</div>
-
-<div>
-<div class="number" data-target="1200">0</div>
-<p>Usuários</p>
-</div>
-
-<div>
-<div class="number" data-target="98">0</div>
-<p>% Aprovação</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<footer>
-© 2026 - Todos os direitos reservados
-</footer>
-
-<script>
-const counters = document.querySelectorAll('.number');
-
-counters.forEach(counter => {
-const update = () => {
-const target = +counter.getAttribute('data-target');
-const current = +counter.innerText;
-
-const increment = target / 100;
-
-if(current < target){
-counter.innerText = Math.ceil(current + increment);
-setTimeout(update,20);
-}else{
-counter.innerText = target;
-}
-};
-
-update();
-});
-</script>
 
 </body>
 </html>
